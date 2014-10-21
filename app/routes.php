@@ -11,44 +11,79 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
-Route::get('/paragraph-generator', function()
-{
-//Generating paragraphs 
-
-$generator = new LoremGenerator();
-
-$paragraphs = $generator-> getParagraphs(rand (1,99));
-
-$random_text= implode('<p>', $paragraphs);
-
-echo $random_text;
-});
-//return view 
-
-//return View::make ('paragraph-generator', $random_text);
-
-//Route:: post('/paragraph-generator', function())
-//{
-//number of paragraphs
+    Route::get('/', function()
+    
+    {
+    
+	return View::make('index');
+	
+    });
 
 
-//
-//);
 
-Route::get('/user-generator',function(){
+    Route::get('/paragraph-generator', function()
+    {
+    
+           
+           //Generating paragraphs in a random first visit view
+                      
+           $random = rand(1,5);
+           
+           $generator = new LoremGenerator();
+
+           $paragraph_nbr = $generator -> getParagraphs($random);
+
+           $randomlorem= implode('<p>', $paragraph_nbr);
+            
+    
+    return View::make ('paragraph', array('randlorem' => $randomlorem));
+     
+    });
+   
+    
+
+    Route::post('/paragraph-generator', function()
+    {
+            //how many paragraphs were submitted
+           
+            $postedlength = Input::get('lorem');
+            
+            
+            //allowed range between these 2 numbers
+           
+            $loremrange= array(1,5);
+           
+            // Generating paragraphs based on user's input 
+           
+                      $generator = new LoremGenerator();
+       
+                      $paragraph_nbr = $generator-> getParagraphs($postedlength);
+
+                      $randomlorem= implode('<p>', $paragraph_nbr);
+
+           
+           // Add if or for construct so that the post method will output the submitted number of paragraphs.
+           
+          
+            return View::make('paragraph', array ('randlorem'=> $randomlorem));
+  });
+  
+  
+  
+ Route::get('/user-generator',function(){
 
 $user = Faker\Factory::create();
 $randomuser_nbr =rand(1,99);
 
 $random = array($user -> name($randomuser_nbr), $user -> phoneNumber($randomuser_nbr), $user -> address($randomuser_nbr));
 $random_user = implode ('<br>', $random);
- return $random_user;
+ return View::make('user', array ('randomuser'=>$random_user));
 });
+
+     
+     
+     
+     
 
 //Route::post('/user-generator', function())
 
