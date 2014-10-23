@@ -24,15 +24,22 @@
 
   <h4> User Generator </h4>
   
-       <form action = "{{url('/paragraph-generator')}}" method = "post"></form>
+       <form action = "{{url('/user-generator')}}" method = "post"></form>
        
  
     <fieldset>
     
+    
+    
          <label for="paragraphLength"><b>Enter the Number of Users you wish to generate: </b><br></label>
          
-		 <p> Users <input class="text" type="number" min="1" max="99" value="2" name="UserNum" /> between 1 and 99</p>
+		 <p> Users <input class="text" type="number" min="1" max="10" value="1" name="userNum" /> between 1 and 10</p>
 		 
+		 <br>
+                <input type="checkbox" id="includePhone" name="includePhone" value="true" ) />
+                <label for="includePhone"> Add Phone Number </label><br>
+
+                               
 		 <input type="submit" value="Generate User"><br></br>
       
     </fieldset>
@@ -41,9 +48,15 @@
     <fieldset>
 
        <legend> Random users below:</legend>
-                
-                
-                 <p id="randomuser"><?=$randomuser?></p> 
+               
+              
+         
+           
+            <?=$randomuser;?>            
+                              
+                       
+
+                               <p id= "user"</p> 
  
     </fieldset>
 

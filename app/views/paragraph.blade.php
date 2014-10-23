@@ -37,21 +37,24 @@
          
 		 <p>Paragraphs: <input class="text" type="number" min="1" max="99" value="2" name="paraNum" /> Between 1 and 99</p>
 		 
-		 <input type="submit" value="Generate Text"><br></br>
-      
-    </fieldset>
+		 <input type="submit" id="loremlength"value="Generate Text"><br></br>
+		  
+		  		 
+		  </fieldset>
 
     
     <fieldset>
 
        <legend> Random text below:</legend>
-                
+           
+
+
                 
                  <p id="randomlorem"><?=$randlorem?></p> 
  
     </fieldset>
 
-    </form>
+    {{Form::close()}}
     </div>
     
     @stop
