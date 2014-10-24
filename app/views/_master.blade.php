@@ -16,15 +16,15 @@
 
           </head>
 
-                  <div id= "top">
-                   <div class="main">
+                    <div id= "top">
+                    <div class="main">
                
-                 @yield ('image')
+               
+               @yield ('image')
                  
               
                   </div>
   
-
 
                    <div class ="topbanner">
                
