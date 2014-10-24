@@ -76,10 +76,62 @@
                 return View::make('paragraph', array ('randlorem'=> $randomlorem));
   });
   
-  
+  	Route::get('/user-generator', function()
+{
+	
+
+	/*Create an instance*/
+	$faker = Faker\Factory::create();
+	
+	/*Build array for random single user*/
+	$users[0] = array();
+	array_push($users[0], $faker->name);
+	array_push($users[0], $faker->address);
+	array_push($users[0], $faker->date($format = 'Y-m-d H:i', $max = 'now'));
+
+	/*Return view with single random user*/
+    return View::make('user', array('results' => $users));
+});
+
+Route::post('/user-generator', function()
+{
+	/*Get post data from submitted page*/
+    $userlength = Input::get('userlength')? Input::get('userlength') : 1;
+	$includeaddress = Input::get('includeaddress');
+	$includebirthday = Input::get('includebirthday');
+
+    /*Create an instance*/
+	$faker = Faker\Factory::create();
+
+	/*Determine which user list to generate*/
+	for ($i = 0; $i < $userlength;  ++$i)
+	{
+        $users[$i]=array($faker->name);
+        
+     
+
+        if ( isset($includebirthday) )
+        {
+        	array_push($users[$i], $faker->date($format = 'd-m-Y'));
+        }
+        
+        if ( isset($includeaddress) )
+        {
+        	array_push($users[$i], $faker->address);
+        }
+
+    }
+
+	/*Return final view to the user*/
+	return View::make('user', array('results' => $users));
+});
+
+	  	
+  	
+  	
   
 
-          
+      
             
 
         

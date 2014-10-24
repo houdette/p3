@@ -14,7 +14,9 @@
       @section ('active')
      
                 <div class = "active"
-                <h4><a href="/" target="_blank">Home</a> | <a href="/paragraph-generator" target="_blank">Lorem Generator</a> |
+                 
+                 <h4><a href="/" target="_blank">Home</a> | <a href="/paragraph-generator" target="_blank">Lorem Generator</a> |
+                
                 <a href="/user-generator" target="_blank">User Generator</a> </h4> </div>
                 
                 
@@ -26,23 +28,25 @@
           
           <div class = "body">
 
-           <h4> Lorem Ipsum </h4>
-           <p> 
+             <h4> Lorem Ipsum </h4> <br>
+           
+                <p> Lorem Ipsum is simply dummy text used in the Web Development industry as a filler text. Below is a Lorum Ipsum example to give you an idea: <br>
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."<br>
+                
+                 Generate your Own here:<a href="/paragraph-generator"> Here.</a></p> <br>
+           
+ 
+             <h4> User Generator </h4> <br>
+           
+               <p> User Generation is a free tool that generates Fake user information, with options to include their birthday and address information. Below, is a fake user information: <br> Elias Crona III
+58881 Keshawn Branch Owenborough, UT 04561
+1997-03-27 22:33 <br>
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Generate your own <a href="/paragraph-generator"> Here.</a></p>
-           
-  
-           
-           
-           <h4> User Generator </h4>
-           
-          <p>
-          User Generation blabla bla <a href="/user-generator"> Here.</a></p>
-          
-           
-          
+               
+                Generate your Own users: <a href="/user-generator"> Here.</a></p>
+                                                 
           
           </div>
   
 
-             @stop
+            @stop
